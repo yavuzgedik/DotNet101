@@ -44,10 +44,13 @@ namespace _04Degiskenler
             string harf = "a";
             char c = 'y';
 
-
             bool bugunTatilMi = false;
             bool bugunDersVarMi = true;
-            bool result = 10 > 2; 
+            bool result = 10 > 2;
+
+            var deger = "Ahmet";
+            var deger1 = 5;
+            var durum = false;
 
         }
 
@@ -69,6 +72,14 @@ namespace _04Degiskenler
         private void txtMetin_TextChanged(object sender, EventArgs e)
         {
             this.Text = txtMetin.Text;
+        }
+
+        private void BtnZaman_Click(object sender, EventArgs e)
+        {
+            DateTime zaman = new DateTime();
+            zaman = DateTime.Now;
+
+            MessageBox.Show(zaman.ToString());
         }
     }
 }
