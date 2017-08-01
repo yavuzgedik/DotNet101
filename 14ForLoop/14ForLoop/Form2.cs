@@ -69,7 +69,7 @@ namespace _14ForLoop
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
                     listBox1.SelectedIndex = i;
-                    Thread.Sleep(100);
+                    Thread.Sleep(100); // 100 milisaniye
                 }
             }
             else
@@ -110,6 +110,76 @@ namespace _14ForLoop
                 int sayi = rnd.Next(1, 11);
                 listBox1.Items.Add(sayi);
             }
+        }
+
+        private void btnRastgeleCiftTek_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int cift = 0, tek = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                // [1,100] arasında rastgele bir sayi belirle
+                int sayi = rnd.Next(1, 101);
+
+                //Sayi Tek mi Çift mi
+                if (sayi % 2 != 0)
+                {
+                    tek++;
+                }
+                else
+                {
+                    cift++;
+                }
+
+                listBox1.Items.Add(sayi);
+            }
+
+            MessageBox.Show($"Çift Sayı: {cift}, Tek Sayı: {tek}");
+        }
+
+        private void btnRenkDegistir_Click(object sender, EventArgs e)
+        {
+            // Form da yer alan Control Sayisi
+            //MessageBox.Show(this.Controls.Count.ToString());
+
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                if (Controls[i] is Button)
+                {
+                    if (Controls[i].Text != "Temizle")
+                    {
+                        Controls[i].BackColor = Color.Blue;
+                        Controls[i].ForeColor = Color.White;
+                    }
+                }
+                else
+                {
+                    Controls[i].BackColor = Color.Green;
+                    Controls[i].ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void btnSon_Click(object sender, EventArgs e)
+        {
+            int toplam = 0;
+            string deger = txtMetin.Text;
+
+            for (int i = 0; i < deger.Length; i++)
+            {
+                try
+                {
+                    int sayi = Convert.ToInt32(deger[i].ToString());
+                    toplam += sayi; // toplam = toplam + sayi;
+                }
+                catch (Exception)
+                {
+                    //MessageBox.Show("Rakadamdan farklı karakter girilmiş");
+                }
+            }
+
+            MessageBox.Show($"Toplam: {toplam}");
         }
     }
 }
