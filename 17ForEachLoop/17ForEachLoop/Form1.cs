@@ -44,7 +44,7 @@ namespace _17ForEachLoop
 
         private void btnIki_Click(object sender, EventArgs e)
         {
-            int[] sayilar = { 123, 45, 56, 876, 753, 734, 11, 9, 2017 };
+            int[] sayilar = { 123, 66, 45, 56, 876, 753, 734, 11, 9, 2017 };
 
             // hem 2 hemde 3 e tam bölünebilen kaç sayı var mesaj box da yazın
             // 2 ye tam bölünen sayıları listbox1
@@ -53,13 +53,6 @@ namespace _17ForEachLoop
             int tamBolunenler = 0;
             foreach (int sayi in sayilar)
             {
-                // && Ve işareti solundaki ve sağındaki iki durumda sağlandığında
-                if (sayi % 2 == 0 && sayi % 3 == 0)
-                {
-                    tamBolunenler++;
-                }
-                
-
                 #region 2ye3ebölünenANDsiz
                 //if (sayi % 2 == 0)
                 //{
@@ -84,9 +77,33 @@ namespace _17ForEachLoop
                 {
                     listBox3.Items.Add(sayi);
                 }
+
+                // && Ve işareti solundaki ve sağındaki iki durumda sağlandığında
+                if (sayi % 2 == 0 && sayi % 3 == 0)
+                {
+                    tamBolunenler++;
+
+                    for (int i = 0; i < listBox1.Items.Count; i++)
+                    {
+                        if (int.Parse(listBox1.Items[i].ToString()) == sayi)
+                        {
+                            listBox1.SelectedIndex = i;
+                        }
+                    }
+
+                    for (int i = 0; i < listBox2.Items.Count; i++)
+                    {
+                        if (int.Parse(listBox2.Items[i].ToString()) == sayi)
+                        {
+                            listBox2.SelectedIndex = i;
+                        }
+                    }
+                }
             }
 
-            MessageBox.Show($"2 ve 3 e tam bölünen {tamBolunenler} sayi vardır.");
+            //MessageBox.Show($"2 ve 3 e tam bölünen {tamBolunenler} sayi vardır.");
+
+            LblMesaj.Text = $"2 ve 3 e tam bölünen {tamBolunenler} sayi vardır.";
         }
     }
 }

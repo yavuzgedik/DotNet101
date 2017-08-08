@@ -33,6 +33,7 @@
             this.btnIki = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.LblMesaj = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEkle
@@ -47,10 +48,12 @@
             // 
             // listBox1
             // 
+            this.listBox1.Enabled = false;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(242, 13);
             this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(120, 184);
             this.listBox1.TabIndex = 1;
             // 
@@ -66,10 +69,12 @@
             // 
             // listBox2
             // 
+            this.listBox2.Enabled = false;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
             this.listBox2.Location = new System.Drawing.Point(368, 13);
             this.listBox2.Name = "listBox2";
+            this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox2.Size = new System.Drawing.Size(120, 184);
             this.listBox2.TabIndex = 3;
             // 
@@ -82,11 +87,21 @@
             this.listBox3.Size = new System.Drawing.Size(120, 184);
             this.listBox3.TabIndex = 4;
             // 
+            // LblMesaj
+            // 
+            this.LblMesaj.AutoSize = true;
+            this.LblMesaj.Location = new System.Drawing.Point(242, 204);
+            this.LblMesaj.Name = "LblMesaj";
+            this.LblMesaj.Size = new System.Drawing.Size(13, 20);
+            this.LblMesaj.TabIndex = 5;
+            this.LblMesaj.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 221);
+            this.ClientSize = new System.Drawing.Size(625, 238);
+            this.Controls.Add(this.LblMesaj);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.btnIki);
@@ -97,6 +112,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +123,7 @@
         private System.Windows.Forms.Button btnIki;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label LblMesaj;
     }
 }
 
