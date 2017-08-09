@@ -57,9 +57,31 @@ namespace _18Arrays
         }
 
         int[] sayilar = { 12, 23, 34, 45, 56 };
+        int i = 0, j = 1, toplam = 0;
         private void btnEkleTopla_Click(object sender, EventArgs e)
         {
+            if (toplam == 0)
+            {
+                i = 0;
+                j = 1;
+            }
 
+            if (i < sayilar.Length)
+            {
+                listBox1.Items.Add(sayilar[i]);
+                toplam += sayilar[i];
+                Text = $"Şuan ki toplam : {toplam}";
+                listBox1.SelectedIndex = i;
+            }
+            else
+            {
+                listBox1.Items.RemoveAt(i - j);
+                toplam -= sayilar[i - j];
+                Text = $"Şuan ki toplam : {toplam}";
+                listBox1.SelectedIndex = (i - j) - 1;
+                j = j + 2;
+            }
+            i++;
         }
     }
 }
