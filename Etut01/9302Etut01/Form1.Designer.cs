@@ -1,4 +1,4 @@
-﻿namespace _9302Etut01
+﻿namespace Etut01
 {
     partial class Form1
     {

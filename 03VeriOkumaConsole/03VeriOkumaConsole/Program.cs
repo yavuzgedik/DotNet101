@@ -14,6 +14,7 @@ namespace _03VeriOkumaConsole
             Console.WriteLine("Lütfen Adınızı ve Soyadınızı Giriniz: ");
             string gelenMetin = Console.ReadLine();
 
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Hoşgeldin " + gelenMetin + "\nçıkmak için bir tuşa basın.");
             // aşağıdaki kod yerine \n 
             //console.writeline("çıkmak için bir tuşa basın."); 
@@ -21,6 +22,7 @@ namespace _03VeriOkumaConsole
             Console.Beep(); // Ses Çıkartır
 
             Console.ReadKey();
+            Console.Beep();
         }
     }
 }

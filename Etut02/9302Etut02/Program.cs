@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Etut01
+namespace _9302Etut02
 {
     static class Program
     {
