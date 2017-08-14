@@ -68,7 +68,6 @@ namespace _19ArrayClass
             {
                 MessageBox.Show("Şehir Bulunamadı!");
             }
-            
         }
 
         private void btnSort_Click(object sender, EventArgs e)
