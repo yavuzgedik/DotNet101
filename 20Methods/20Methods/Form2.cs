@@ -53,7 +53,6 @@ namespace _20Methods
         {
             return BackColor;
         }
-
         private void btnTopla_Click(object sender, EventArgs e)
         {
             int num1 = (int)numBirinci.Value;
@@ -87,12 +86,24 @@ namespace _20Methods
         {
             RenkDegistir();
         }
-
         private void btnWC_Click(object sender, EventArgs e)
         {
             Color c = ArkaPlanRengi();
             MessageBox.Show(c.Name);
             //System.Diagnostics.Process.Start("http://www.YavuzGedik.com"); 
+        }
+
+        string MailOlustur(string ad, string soyad)
+        {
+            string degisenAd = ad.Substring(0, 1).ToUpper() + ad.Substring(1, ad.Length - 1).ToLower();
+            string degisenSoyAd = soyad.Substring(0, 1).ToUpper() + soyad.Substring(1, soyad.Length - 1).ToLower();
+            return degisenAd + degisenSoyAd;
+        }
+
+        private void btnOlustur_Click(object sender, EventArgs e)
+        {
+            MessageBox
+                .Show(MailOlustur(txtAd.Text.Trim(), txtSoyad.Text.Trim()) + cboxMailDomain.SelectedItem.ToString());
         }
     }
 }
