@@ -1,11 +1,10 @@
-﻿using Etut02;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _9302Etut02
+namespace Etut03
 {
     static class Program
     {
