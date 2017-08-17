@@ -129,6 +129,7 @@
             this.listSepet.Name = "listSepet";
             this.listSepet.Size = new System.Drawing.Size(309, 164);
             this.listSepet.TabIndex = 6;
+            this.listSepet.DoubleClick += new System.EventHandler(this.listSepet_DoubleClick);
             // 
             // btnHesapla
             // 

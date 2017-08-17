@@ -57,28 +57,25 @@ namespace Etut03
             if(index == 0)
             {
                 BaklagilListele();
-                turuncgilMi = false;
             }
             else if (index == 1)
             {
                 TuruncgilListele();
-                turuncgilMi = true;
             }
         }
 
         int count = 0;
-        bool turuncgilMi = false;
         private void btnEkle_Click(object sender, EventArgs e)
         {
             string urun = listUrunler.SelectedItem.ToString();
             double kilo = (double)numKilo.Value;
             int index = listUrunler.SelectedIndex;
 
-            if (turuncgilMi == true)
+            if(cboxUrunler.SelectedIndex == 1) // Seçili Grup Turunçgil ise
             {
                 urunFiyat[count] = kilo * turuncgillerFiyat[index];
             }
-            else
+            else // Seçili Grup Baklagil ise
             {
                 urunFiyat[count] = kilo * baklagillerFiyat[index];
             }
@@ -106,7 +103,13 @@ namespace Etut03
             listSepet.Items.Clear();
             listUrunler.Items.Clear();
             urunFiyat = new double[20];
-            turuncgilMi = false;
+        }
+
+        private void listSepet_DoubleClick(object sender, EventArgs e)
+        {
+            int index = listSepet.SelectedIndex;
+            listSepet.Items.RemoveAt(index);
+            urunFiyat[index] = 0;
         }
     }
 }
