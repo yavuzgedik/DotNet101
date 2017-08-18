@@ -17,6 +17,7 @@ namespace OutRefParams
             InitializeComponent();
         }
 
+        // OUT ile geriye değer dönmeyen bir metot dan geriye değer dönebiliriz.
         void GeriyeDegerDon(int sayi, out double firlatilanSonuc)
         {
             firlatilanSonuc = Math.Pow(sayi, 2);
@@ -29,6 +30,7 @@ namespace OutRefParams
             MessageBox.Show(yakalananSonuc.ToString());
         }
 
+        // OUT ile bir metot dan geriye birden fazla değer dönebiliriz.
         void Hesapla(int sayi1, int sayi2, out int toplam, out int cikarma, out long carpma, out double bolme, out byte mod)
         {
             toplam = sayi1 + sayi2;
@@ -47,6 +49,7 @@ namespace OutRefParams
             Hesapla(8, 3, out toplam, out cikarma, out carpma, out bolme, out mod);
         }
 
+        // PARAMS ile bir metotun kaç parametre alacağınızı bilemediğimiz durumlarda çözüm üretiriz. Bir dizi şeklinde dilediğimiz kadar paremetre gönderebiliriz.
         double FiyatHesapla(params double[] fiyatlar)
         {
             double toplamFiyat = 0;
