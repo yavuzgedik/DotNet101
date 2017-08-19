@@ -19,10 +19,10 @@ namespace _02HelloWorldFormsApp
 
         private void btn_Click(object sender, EventArgs e)
         {
-            btn.Text = "Tıklandım";
-            MessageBox.Show("Hello World"); // Mesaj Çıkartır.
-            btn.BackColor = Color.Blue;
-            btn.ForeColor = Color.White;
+            btn.Text = "Tıklandım"; // Toolbox dan eklenen butonun Text özelliğine yeni bir ifade atandı.
+            MessageBox.Show("Hello World"); // EKrana Mesaj Kutusu Çıkartır.
+            btn.BackColor = Color.Blue; // Butonun arka plan rengine mavi renk atandı.
+            btn.ForeColor = Color.White; // Butonun yazı rengine beyaz renk atandı.
 
             //Application.Exit(); // Uygulamayı sonlandırır.
         }

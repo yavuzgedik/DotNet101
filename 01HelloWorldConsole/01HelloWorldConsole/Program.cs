@@ -10,10 +10,11 @@ namespace _01HelloWorldConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(); // Bir satır boşluk bırakır (Tek satırda yorum yapma yöntemi)
-            Console.WriteLine("Hello World");
-            Console.Write("Yavuz Gedik");
-            Console.WriteLine(" 2017");
+            // Tek satırda yorum yapma yöntemi
+            Console.WriteLine(); // Bir satır boşluk bırakır
+            Console.WriteLine("Hello World"); // tırnak içindeki ifadeyi yazıp yeni satıra geçer
+            Console.Write("Yavuz Gedik"); // tırnak içindeki ifadeyi yazıp kaldığı yerden devam eder
+            Console.WriteLine(" 2017"); // bir önceki kod satırında yeni satıra geçilmediği için tırnak içindeki ifadeyeilk karakteri boşluk oldu. Bitişik bir yazı yazılmaması için
             Console.ReadKey(); //Kullanıcı bir tuşa basana kadar Console ekranını bekletir
 
             /*
