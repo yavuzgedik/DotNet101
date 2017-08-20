@@ -58,7 +58,7 @@ namespace _04Degiskenler
             bool bugunDersVarMi = true;
             bool result = 10 > 2;
 
-            var deger = "Ahmet";
+            var deger = "Ahmet"; // var tipli değişkene ne atanırsa o tipe bürünür.
             var deger1 = 5;
             var durum = false;
 
@@ -79,19 +79,22 @@ namespace _04Degiskenler
         private void btnMerhaba_Click(object sender, EventArgs e)
         {
             string gelenMetin = txtMetin.Text; // txtMetin adlı TextBox'ın Text değeri ilgili değişkene atanıyor. (Text özelliği string'dir.)
-            MessageBox.Show("Merhaba " + gelenMetin);
-            btnMerhaba.Text = gelenMetin;
+            MessageBox.Show("Merhaba " + gelenMetin); // + karakteri ile ik string birleştirilir.
+            btnMerhaba.Text = gelenMetin; // btnMerhaba adlı Button'ın Text değerine gelenMetin'in değeri atanıyor.
         }
 
         private void txtMetin_TextChanged(object sender, EventArgs e)
         {
-            this.Text = txtMetin.Text;
+            this.Text = txtMetin.Text; // Form'un Text değerine atama yapılıyor.
+            
+            // this.Text yerine sadece Text kullanılabilir.
+            //Text = txtMetin.Text;
         }
 
         private void BtnZaman_Click(object sender, EventArgs e)
         {
             DateTime zaman = new DateTime(); // Tarih, Zaman ve Saat işlemleri için kullandığımız Class ve Tip
-            zaman = DateTime.Now;
+            zaman = DateTime.Now; // Kod satırının çalıştığı andaki tarih ve saat bilgileri zaman değişkenine atanıyor.
 
             MessageBox.Show(zaman.ToString());
         }
