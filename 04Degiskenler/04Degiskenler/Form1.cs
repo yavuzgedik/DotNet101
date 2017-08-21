@@ -29,7 +29,7 @@ namespace _04Degiskenler
             metin = "2017 yılındayız.";
 
             /*
-             * değişen tiplerinin üzerine tıklayıp F12'ye basarak ilgili tipin ayrıntılarını görebilirsiniz.
+             * değişken tiplerinin üzerine tıklayıp F12'ye basarak ilgili tipin ayrıntılarını görebilirsiniz.
              * Veya değişen tiplerinin üzerine sağ tık yapıp Go To Definition seçeneği ile aynı işlevi yapabilirsiniz.
              */
             byte number;
