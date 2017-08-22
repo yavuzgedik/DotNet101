@@ -18,12 +18,20 @@ namespace _24Timer
         }
 
         Timer tmr = new Timer();
+        Timer tmr2 = new Timer();
         Random rnd = new Random();
         private void Form3_Load(object sender, EventArgs e)
         {
             tmr.Interval = 1000;
             tmr.Tick += Tmr_Tick;
             tmr.Start();
+
+            tmr2.Tick += DersBitti;
+        }
+
+        private void DersBitti(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void Tmr_Tick(object sender, EventArgs e)
