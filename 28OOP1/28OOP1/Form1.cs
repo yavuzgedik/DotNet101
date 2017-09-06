@@ -17,6 +17,7 @@ namespace _28OOP1
             InitializeComponent();
         }
 
+        List<Araba> Araclar = new List<Araba>();
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (btnEkle.Text == "EKLE")
@@ -27,18 +28,25 @@ namespace _28OOP1
                 a1.plaka = txtPlaka.Text;
                 a1.renk = cboxRenk.SelectedItem.ToString();
 
-                listAraclar.Items.Add(a1);
+                //listAraclar.Items.Add(a1);
+                Araclar.Add(a1);
+                Listele();
                 Temizle();
             }
             else
             {
                 Araba car = (Araba)listAraclar.SelectedItem;
-                listAraclar.Items.Remove(car);
-                car.fiyat = (double)numFiyat.Value;
-                car.marka = txtMarka.Text;
-                car.plaka = txtPlaka.Text;
-                car.renk = cboxRenk.SelectedItem.ToString();
-                listAraclar.Items.Add(car);
+                //listAraclar.Items.Remove(car);
+                //Araclar.Remove(car);
+                var guncellenecekAraba = Araclar.FirstOrDefault(a => a.plaka == car.plaka);
+
+                guncellenecekAraba.fiyat = (double)numFiyat.Value;
+                guncellenecekAraba.marka = txtMarka.Text;
+                guncellenecekAraba.plaka = txtPlaka.Text;
+                guncellenecekAraba.renk = cboxRenk.SelectedItem.ToString();
+                //listAraclar.Items.Add(car);
+                //Araclar.Add(car);
+                Listele();
             }
             
         }
@@ -58,7 +66,6 @@ namespace _28OOP1
             }
             catch (Exception)
             {
-                throw;
             }
         }
 
@@ -70,16 +77,26 @@ namespace _28OOP1
             cboxRenk.SelectedIndex = 0;
         }
 
+        void Listele()
+        {
+            listAraclar.Items.Clear();
+
+            foreach (var item in Araclar)
+            {
+                listAraclar.Items.Add(item);
+            }
+        }
+
         private void listAraclar_DoubleClick(object sender, EventArgs e)
         {
             try
             {
                 Araba car = (Araba)listAraclar.SelectedItem;
-                listAraclar.Items.Remove(car);
+                //listAraclar.Items.Remove(car);
+                Araclar.Remove(car);
             }
             catch (Exception)
             {
-                throw;
             }
         }
 
@@ -101,6 +118,5 @@ namespace _28OOP1
     }
     //class Car
     //{
-
     //}
 }
