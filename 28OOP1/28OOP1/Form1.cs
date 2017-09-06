@@ -24,28 +24,32 @@ namespace _28OOP1
             {
                 Araba a1 = new Araba();
                 a1.fiyat = (double)numFiyat.Value;
-                a1.marka = txtMarka.Text;
-                a1.plaka = txtPlaka.Text;
+                a1.marka = txtMarka.Text.ToUpper();
+                a1.plaka = txtPlaka.Text.ToUpper();
                 a1.renk = cboxRenk.SelectedItem.ToString();
-
-                //listAraclar.Items.Add(a1);
-                Araclar.Add(a1);
+                
+                if (!PlakaSorgula(a1.plaka))
+                {
+                    Araclar.Add(a1);
+                }
+                else
+                {
+                    MessageBox.Show("Plaka Kayıtlı!");
+                }
+                
                 Listele();
                 Temizle();
             }
             else
             {
                 Araba car = (Araba)listAraclar.SelectedItem;
-                //listAraclar.Items.Remove(car);
-                //Araclar.Remove(car);
-                var guncellenecekAraba = Araclar.FirstOrDefault(a => a.plaka == car.plaka);
+                var guncellenecekAraba = Araclar.
+                    FirstOrDefault(a => a.plaka.ToUpper() == car.plaka.ToUpper());
 
                 guncellenecekAraba.fiyat = (double)numFiyat.Value;
-                guncellenecekAraba.marka = txtMarka.Text;
-                guncellenecekAraba.plaka = txtPlaka.Text;
+                guncellenecekAraba.marka = txtMarka.Text.ToUpper();
+                guncellenecekAraba.plaka = txtPlaka.Text.ToUpper();
                 guncellenecekAraba.renk = cboxRenk.SelectedItem.ToString();
-                //listAraclar.Items.Add(car);
-                //Araclar.Add(car);
                 Listele();
             }
             
@@ -68,31 +72,12 @@ namespace _28OOP1
             {
             }
         }
-
-        void Temizle()
-        {
-            txtMarka.Clear();
-            txtPlaka.Clear();
-            numFiyat.Value = 100;
-            cboxRenk.SelectedIndex = 0;
-        }
-
-        void Listele()
-        {
-            listAraclar.Items.Clear();
-
-            foreach (var item in Araclar)
-            {
-                listAraclar.Items.Add(item);
-            }
-        }
-
+        
         private void listAraclar_DoubleClick(object sender, EventArgs e)
         {
             try
             {
                 Araba car = (Araba)listAraclar.SelectedItem;
-                //listAraclar.Items.Remove(car);
                 Araclar.Remove(car);
             }
             catch (Exception)
@@ -115,8 +100,49 @@ namespace _28OOP1
                 checkBoxEkleGüncelle.Text = "Ekle";
             }
         }
+
+        void Temizle()
+        {
+            txtMarka.Clear();
+            txtPlaka.Clear();
+            numFiyat.Value = 100;
+            cboxRenk.SelectedIndex = 0;
+        }
+
+        void Listele()
+        {
+            listAraclar.Items.Clear();
+
+            foreach (var item in Araclar)
+            {
+                listAraclar.Items.Add(item);
+            }
+        }
+
+        bool PlakaSorgula(string plaka)
+        {
+            #region FirstOrDefault
+            //var result = Araclar.FirstOrDefault(a => a.plaka.ToLower() == plaka.ToLower());
+            //if (result != null)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+            #endregion
+            
+            #region DonguIle
+            foreach (var item in Araclar)
+            {
+                if (item.plaka.ToLower() == plaka.ToLower())
+                {
+                    return true;
+                }
+            }
+            return false;
+            #endregion
+        }
     }
-    //class Car
-    //{
-    //}
 }
