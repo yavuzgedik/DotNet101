@@ -9,3 +9,8 @@ https://www.microsoft.com/tr-tr/sql-server/sql-server-editions-express
 
 Visual Studio IDE:
 https://www.visualstudio.com/
+
+Kitaplar;
+* https://www.dikeyeksen.com/products/c-sharp-tam-hakimiyet
+* https://www.pusulakitaplik.com/pinfo.asp?pid=383
+* https://www.seckin.com.tr/kitap/911233565
